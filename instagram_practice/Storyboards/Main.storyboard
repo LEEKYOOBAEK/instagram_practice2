@@ -39,7 +39,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="blp-7b-Yef"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
@@ -185,6 +184,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1mm-mR-zpY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="kd0-fO-pzq" id="Vvq-rm-Vy9"/>
+                        <outlet property="passwordTextField" destination="hhh-S9-hZx" id="teq-dB-D4T"/>
+                        <outlet property="profileImage" destination="Om0-Vk-iAZ" id="p0n-UT-Jya"/>
+                        <outlet property="usernameTextField" destination="H8z-1P-ihi" id="kNS-wL-eNd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vY2-7f-MlV" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,6 +208,6 @@
         <image name="placeholderimg" width="623" height="801.39129638671875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Aoy-TN-3xp"/>
+        <segue reference="ke4-G6-ihJ"/>
     </inferredMetricsTieBreakers>
 </document>

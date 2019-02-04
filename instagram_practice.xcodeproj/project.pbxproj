@@ -81,13 +81,19 @@
 			isa = PBXGroup;
 			children = (
 				AC4A0B9322084530002FE06E /* AppDelegate.swift */,
-				AC4A0BA8220846E6002FE06E /* SignInViewController.swift */,
-				AC4A0BAA220851BA002FE06E /* SignUpViewController.swift */,
-				AC4A0BAC22086627002FE06E /* HomeViewController.swift */,
-				AC4A0BAE2208665D002FE06E /* DiscoverViewController.swift */,
-				AC4A0BB022086664002FE06E /* CameraViewController.swift */,
-				AC4A0BB222086677002FE06E /* ActivityViewController.swift */,
-				AC4A0BB422086686002FE06E /* ProfileViewController.swift */,
+				AC7E48082208E872000C6A38 /* ViewControllers */,
+				AC7E48072208E85A000C6A38 /* Storyboards */,
+				AC4A0B9D22084531002FE06E /* Assets.xcassets */,
+				AC4A0B9F22084531002FE06E /* LaunchScreen.storyboard */,
+				AC4A0BA222084531002FE06E /* Info.plist */,
+				AC4A0B9A22084530002FE06E /* instagram_practice.xcdatamodeld */,
+			);
+			path = instagram_practice;
+			sourceTree = "<group>";
+		};
+		AC7E48072208E85A000C6A38 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				AC4A0BB622086BD9002FE06E /* Main.storyboard */,
 				AC4A0BB822086C98002FE06E /* start2.storyboard */,
 				AC4A0BBA22086E55002FE06E /* Home.storyboard */,
@@ -95,12 +101,22 @@
 				AC4A0BC022086F1D002FE06E /* Camera.storyboard */,
 				AC4A0BC222086F41002FE06E /* Activity.storyboard */,
 				AC4A0BC422086F5D002FE06E /* Profile.storyboard */,
-				AC4A0B9D22084531002FE06E /* Assets.xcassets */,
-				AC4A0B9F22084531002FE06E /* LaunchScreen.storyboard */,
-				AC4A0BA222084531002FE06E /* Info.plist */,
-				AC4A0B9A22084530002FE06E /* instagram_practice.xcdatamodeld */,
 			);
-			path = instagram_practice;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AC7E48082208E872000C6A38 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC4A0BA8220846E6002FE06E /* SignInViewController.swift */,
+				AC4A0BAA220851BA002FE06E /* SignUpViewController.swift */,
+				AC4A0BAC22086627002FE06E /* HomeViewController.swift */,
+				AC4A0BAE2208665D002FE06E /* DiscoverViewController.swift */,
+				AC4A0BB022086664002FE06E /* CameraViewController.swift */,
+				AC4A0BB222086677002FE06E /* ActivityViewController.swift */,
+				AC4A0BB422086686002FE06E /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
