@@ -25,6 +25,7 @@
 		AC4A0BC122086F1D002FE06E /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4A0BC022086F1D002FE06E /* Camera.storyboard */; };
 		AC4A0BC322086F41002FE06E /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4A0BC222086F41002FE06E /* Activity.storyboard */; };
 		AC4A0BC522086F5D002FE06E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4A0BC422086F5D002FE06E /* Profile.storyboard */; };
+		ACEFD7A0220909F100D10516 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACEFD79F220909F100D10516 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		AC4A0BC022086F1D002FE06E /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		AC4A0BC222086F41002FE06E /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		AC4A0BC422086F5D002FE06E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		ACEFD79F220909F100D10516 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				AC7E48072208E85A000C6A38 /* Storyboards */,
 				AC4A0B9D22084531002FE06E /* Assets.xcassets */,
 				AC4A0B9F22084531002FE06E /* LaunchScreen.storyboard */,
+				ACEFD79F220909F100D10516 /* GoogleService-Info.plist */,
 				AC4A0BA222084531002FE06E /* Info.plist */,
 				AC4A0B9A22084530002FE06E /* instagram_practice.xcdatamodeld */,
 			);
@@ -184,6 +187,7 @@
 				AC4A0B9E22084531002FE06E /* Assets.xcassets in Resources */,
 				AC4A0BBF22086EDF002FE06E /* Discover.storyboard in Resources */,
 				AC4A0BC522086F5D002FE06E /* Profile.storyboard in Resources */,
+				ACEFD7A0220909F100D10516 /* GoogleService-Info.plist in Resources */,
 				AC4A0BB722086BD9002FE06E /* Main.storyboard in Resources */,
 				AC4A0BC322086F41002FE06E /* Activity.storyboard in Resources */,
 			);
