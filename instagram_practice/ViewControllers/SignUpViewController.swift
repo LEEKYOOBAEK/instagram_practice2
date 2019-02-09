@@ -1,12 +1,8 @@
-//
-//  SignUpViewController.swift
-//  instagram_practice
-//
-//  Created by MBP01 on 04/02/2019.
-//  Copyright © 2019 MBP01. All rights reserved.
-//
-
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
+
 
 class SignUpViewController: UIViewController {
 
@@ -14,6 +10,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    let selectedImage = UIImage?.self
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.backgroundColor = UIColor.clear
@@ -45,21 +44,57 @@ class SignUpViewController: UIViewController {
         
         profileImage.layer.cornerRadius = 40
         profileImage.clipsToBounds = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+        profileImage.addGestureRecognizer(tapGesture)
+        profileImage.isUserInteractionEnabled = true
+        
         // Do any additional setup after loading the view.
     }
+    
+    @objc func handleSelectProfileImageView() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController,animated: true, completion: nil)
+    }
+    
     @IBAction func dismiss_onClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func signUpBtn_TouchUpInside(_ sender: Any) {
+        
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(AuthDataResult,Error) in
+            if Error != nil {
+                print(Error!.localizedDescription)
+                return
+            }
+            let uid = AuthDataResult?.user.uid
+            let storageRef = Storage.storage().reference(forURL: "gs://instagrampractice-bf099.appspot.com").child("profileImage").child(uid!)
+            if let profileImage = self.selectedImage, let imageData = UIImage.jpegData(compressionQuality: 0.1)
+            
+            let ref = Database.database().reference()
+            let usersReference = ref.child("users")
+            
+            let newUserReference = usersReference.child(uid!)
+            // print(usersReference.description()) : https://console.firebase.google.com/project/instagrampractice-bf099/database/firestore/data/users
+            newUserReference.setValue(["username": self.usernameTextField.text!, "email" : self.emailTextField.text!])
+            print("description: \(usersReference.description())")
+            //print(User)
+        })
+     
     }
-    */
+}
 
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("Finish")
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
+            selectedImage = image
+            profileImage.image = image
+            
+        }
+        print(info)
+        //profileImage.image = infoPhoto
+        dismiss(animated: true, completion: nil)
+    }
 }

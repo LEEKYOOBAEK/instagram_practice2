@@ -157,7 +157,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.60421125860000002" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="P8i-Ob-5If" kind="presentation" id="ke4-G6-ihJ"/>
+                                            <action selector="signUpBtn_TouchUpInside:" destination="F0f-qT-fo1" eventType="touchUpInside" id="c6E-Xq-dRj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -207,7 +207,4 @@
     <resources>
         <image name="placeholderimg" width="623" height="801.39129638671875"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ke4-G6-ihJ"/>
-    </inferredMetricsTieBreakers>
 </document>
