@@ -61,6 +61,7 @@ class SignUpViewController: UIViewController {
     @IBAction func dismiss_onClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func signUpBtn_TouchUpInside(_ sender: Any) {
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(AuthDataResult,Error) in
@@ -69,8 +70,16 @@ class SignUpViewController: UIViewController {
                 return
             }
             let uid = AuthDataResult?.user.uid
-            let storageRef = Storage.storage().reference(forURL: "gs://instagrampractice-bf099.appspot.com").child("profileImage").child(uid!)
-            if let profileImage = self.selectedImage, let imageData = UIImage.jpegData(compressionQuality: 0.1)
+            let storageRef = Storage.storage().reference(forURL: "gs://instagrampractice-bf099.appspot.com").child("profile_Image").child(uid!)
+            if let profileImg = self.selectedImage, let imageData = UIImage.jpegData(compressionQuality: 0.1) {
+                storageRef.putData(imageData, metadata: nil, completion: {(imageData, Error) in
+                    if Error != nil {
+                        return
+                    }
+                    
+                    let profileImageUrl = 
+                })
+            }
             
             let ref = Database.database().reference()
             let usersReference = ref.child("users")
@@ -88,6 +97,7 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("Finish")
+        let image = UIImage()
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             selectedImage = image
             profileImage.image = image
